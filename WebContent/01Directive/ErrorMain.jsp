@@ -1,17 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     errorPage="ErrorPage.jsp"
-    %>
+%>
  <%--
  	errorPage 지시어
  	: 해당 페이지에서 에러(예외)가 발생되었을때 예외처리를 설정한
  	페이지에서 하겠다는 선언이다.
  	500에러와 같은 페이지를 사용자에게 보여주지 않아도 되므로 사이트에 대한
  	신뢰도를 높일 수 있다.
-  --%>  
+  --%> 
+   
  <%
  // 사용자가 전송한 파라미터를 request객체를 통해 받아온다.
  String strAge = request.getParameter("age");
+ 
+ 
  // JS의 document.write()와 같이 브라우저에 변수를 출력한다.
  out.println("strAge="+strAge);
  
