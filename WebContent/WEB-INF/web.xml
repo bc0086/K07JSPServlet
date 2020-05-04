@@ -4,7 +4,7 @@
   
   <!-- 
   	JDBC사용을 위한 "컨텍스트 초기화 파라미터"를 설정
-  	해당 설정값은 웹어플ㄹ리케이션 모든 JSP혹은 서블릿에서
+  	해당 설정값은 웹어플리케이션 모든 JSP혹은 서블릿에서
   	접근가능 
 	-->
   	
@@ -17,6 +17,13 @@
   	<param-name>ConnectionURL</param-name>
   	<param-value>jdbc:oracle:thin:@localhost:1521:orcl</param-value>
   </context-param>
+  
+  <!-- 
+  세션유지시간 설정 : 여기서 설정한 시간은 '분; 단위
+  -->
+  <session-config>
+  	<session-timeout>60</session-timeout>
+  </session-config>
   
   <!--
   해당 웹어플리케이션을 실행했을때 팡리명을 명시하지 않으면
