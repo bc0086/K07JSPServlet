@@ -22,6 +22,7 @@ public class JavascriptUtil {
 		return str;
 	}	
 	
+	// 문자열만 반환하고 JSP에서 출력하는 방식
 	public static void jsAlertLocation(String msg, String url, JspWriter out) {
 		try {
 			String str = ""
