@@ -1,6 +1,7 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
 <%--
 	include 지시어 : 공통으로 사용할 jsp파일을 생성한 후 
 	현재문서에 포함시킬떄 사용하낟. 각각의 jsp파일 상단에는

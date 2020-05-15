@@ -19,7 +19,7 @@
 	 -->
 	<h2>set태그</h2>
 	<h3>set태그로 EL에서 사용할 변수 설정하기</h3>
-	<ul>
+	<ul> 
 		<li>
 		1.value속성에 직접 값 대입:
 			<c:set var="directVar" value="100" />

@@ -10,7 +10,6 @@
 <title>PageResult.jsp</title>
 </head>
 <body>
-
 	<h2>이전페이지에서 저장한 페이지영역의 속성 읽기</h2>
 	<%
 	Object obj = pageContext.getAttribute("pageDate");
