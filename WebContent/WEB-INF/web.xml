@@ -41,11 +41,17 @@
 		<servlet-class>servlet.NoJSPServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
+	
+		
 		<servlet-name>NoJSPServlet</servlet-name>
+		
+		<!-- 요청명을 기술함 -->
 		<url-pattern>/13Servlet/NoJSPServlet.do</url-pattern>
 	</servlet-mapping>
 
 	<!-- 서블릿 등록하기 -->
+	
+	<!-- 예제2 : JSP파일에서 내용을 풀력함. 또한 서블릿 초기화 파라미터 이용함. -->
 	<servlet>
 		<servlet-name>HelloServlet</servlet-name>
 		<servlet-class>servlet.HelloServlet</servlet-class>
@@ -105,6 +111,7 @@
 	</welcome-file-list>
 	
 	<!-- 서블릿으로 게시판 만들기 -->
+	<!-- 자료실 리스트 -->
 	<servlet>
 		<servlet-name>DataRoomList</servlet-name>
 		<servlet-class>controller.ListCtrl</servlet-class>
@@ -112,6 +119,26 @@
 	<servlet-mapping>
 		<servlet-name>DataRoomList</servlet-name>
 		<url-pattern>/DataRoom/DataList</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 자료실 글쓰기 -->
+	<servlet>
+		<servlet-name>DataRoomWrite</servlet-name>
+		<servlet-class>controller.WriteCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DataRoomWrite</servlet-name>
+		<url-pattern>/DataRoom/DataWrite</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 자료실 게시글보기(상세보기) -->
+	<servlet>
+		<servlet-name>DataRoomView</servlet-name>
+		<servlet-class>controller.ViewCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DataRoomView</servlet-name>
+		<url-pattern>/DataRoom/DataView</url-pattern>
 	</servlet-mapping>
 
 </web-app>

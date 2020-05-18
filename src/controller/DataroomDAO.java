@@ -52,9 +52,14 @@ public class DataroomDAO {
 	// 자료실 게시판의 전체 레코드 갯수 카운트
 	public int getTotalRecordCount(Map map)
 	{
+		// 게시물의 수는 0으로 초기화
 		int totalCount = 0;
 		try {
+			
+			// 기본퀴리문(전체레코드를 대상으로 함)
 			String sql = " SELECT COUNT(*) FROM dataroom ";
+			
+			// JSP페이지에서 검색어를 입력한 경우 where절이 동적으로 추가됨
 			if(map.get("Word")!=null) {
 				sql += " WHERE " + map.get("Column") + " "
 					+ " LIKE '%"+map.get("Word")+"%' ";
@@ -64,6 +69,8 @@ public class DataroomDAO {
 			psmt = con.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			rs.next();
+			
+			// 반환한 결과값(레코드수)을 저장
 			totalCount = rs.getInt(1);
 		}
 		catch(Exception e) {}
@@ -107,6 +114,72 @@ public class DataroomDAO {
 		}
 		
 		return bbs;
+	}
+	
+	// 자료실 글쓰기 처리 메소드
+	public int insert(DataroomDTO dto) {
+		// 실제 입력된 행의 갯수를 저장하기 위한 변수
+		int affected = 0;
+		try {
+			String sql = " INSERT INTO dataroom ("
+				+ " idx, title, name, content, attachedfile, pass, downcount) "
+				+ " VALUES ("
+				+ " dataroom_seq.NEXTVAL, ?, ?, ?, ?, ?, 0)";
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getName());
+			psmt.setString(3, dto.getContent());
+			psmt.setString(4, dto.getAttachedfile());
+			psmt.setString(5, dto.getPass());
+			
+			// insert성공시 1반환, 실패시 0반환
+			affected = psmt.executeUpdate();
+		}
+		catch(Exception e) {
+			System.out.println("insert중 예외발생");
+			e.printStackTrace();
+		}
+		return affected;
+	}
+	
+	public void updateVisitCount(String idx) {
+		String sql = "UPDATE dataroom SET "
+			+ " visitcount=visitcount+1 "
+			+ " WHERE idx=? ";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, idx);
+			psmt.executeUpdate();
+		}
+		catch(Exception e) {}
+	}
+	
+	public DataroomDTO selectView(String idx) {
+		DataroomDTO dto = null;
+		String sql = "SELECT * FROM dataroom "
+			+ " WHERE idx=?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, idx);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				dto = new DataroomDTO();
+				
+				dto.setIdx(rs.getString(1));
+				dto.setName(rs.getString(2));
+				dto.setTitle(rs.getString(3));
+				dto.setContent(rs.getString(4));
+				dto.setPostdate(rs.getDate(5));
+				dto.setAttachedfile(rs.getString(6));
+				dto.setDowncount(rs.getInt(7));
+				dto.setPass(rs.getString(8));
+				dto.setVisitcount(rs.getInt(9));// 조회수 추가
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dto;
 	}
 
 }
