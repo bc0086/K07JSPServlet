@@ -79,7 +79,7 @@
 				<button type="button" class="btn btn-secondary"
 					onclick="location.href='./DataPassword?idx=${param.idx }&mode=edit&nowPage=${param.nowPage }';">수정하기</button>
 				<button type="button" class="btn btn-success"
-					onclick="location.href='../DataRoom/DataPassword?mode=delete&idx=';">삭제하기</button>
+					onclick="location.href='./DataRoom/DataPassword?idx=${dto.idx }&mode=deltet&nowPage=${param.nowPage }';">삭제하기</button>
 			
 			</div>
 			
