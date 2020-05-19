@@ -64,10 +64,8 @@ public class WriteCtrl extends HttpServlet {
 			dto.setPass(pass);
 			
 			// DAO객체생성 및 DB연결...insert처리
-			DataroomDAO dao = new DataroomDAO();
-			
-			sucOrFail = dao.insert(dto);
-			
+			DataroomDAO dao = new DataroomDAO();			
+			sucOrFail = dao.insert(dto);			
 			dao.close();
 		}
 		else {

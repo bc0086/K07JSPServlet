@@ -11,34 +11,16 @@
 	<div class="row">		
 		<jsp:include page="../common/boardLeft.jsp" />
 		<div class="col-9 pt-3">
-			<h3>자료실 - <small>Write(작성)</small></h3>
+			<h3>자료실 - <small>Password(패스워드 검증)</small></h3>
 			
 			<script>
 				// 유기명 함수
 				function checkValidate(frm) { // frm이라는 변수는 form태그의 dom객체이다.
 					
-					if(frm.name.value == "") {
-						alert("이름을 입력하세요."); // 경고창 띄움
-						frm.name.focus(); // 입력란으로 포커스 이동
-						return false; // 전송되지 않도록 이벤트리스너로 false반환
-					}
-				
 					if(frm.pass.value == "") {
 						alert("비밀번호 입력하세요."); // 경고창 띄움
 						frm.pass.focus(); // 입력란으로 포커스 이동
 						return false; // 전송되지 않도록 이벤트리스너로 false반환
-					}
-						
-					if(frm.title.value == "") {
-							alert("제목이 없습니다."); // 경고창 띄움
-							frm.title.focus(); // 입력란으로 포커스 이동
-							return false; // 전송되지 않도록 이벤트리스너로 false반환
-					}
-					
-					if(frm.content.value == "") {
-							alert("내용이 없습니다."); // 경고창 띄움
-							frm.content.focus(); // 입력란으로 포커스 이동
-							return false; // 전송되지 않도록 이벤트리스너로 false반환
 					}
 				}
 				
@@ -52,26 +34,25 @@
 				<table class="table table-bordered table-striped">	
 				
 				<!-- 
-					파일 업로드를 위해서는 반드시 enctype을 선언해야 한다.
-					그렇지 않으면 파일은 서버로 전송되지 않는다.
-				 -->			
-				<form name="writeFrm" method="post" action="../DataRoom/DataWrite" 
-					enctype="multipart/form-data"
+					패스워드 검증폼은 첨부파일을 전송하지 않으므로 enctype선언부분을
+					삭제해야 한다.
+				 -->
+				<form name="writeFrm" method="post" action="../DataRoom/DataPassword" 
 					onsubmit="return checkValidate(this);">
+					
+				<!-- 
+					패스워드 검증을 위해 idx, mode는 서버로 전송해야 하므로
+					hidden폼에 값을 저장한다.
+				 -->
+				<input type="hidden" name="idx" value="${param.idx }" />
+				<input type="hidden" name="mode" value="${mode }" />
+				<input type="hidden" name="nowPage" value="" />
 					
 				<colgroup>
 					<col width="20%"/>
 					<col width="*"/>
 				</colgroup>
 				<tbody>
-					<tr>
-						<th class="text-center align-middle">작성자</th>
-						<td>
-							<input type="text" class="form-control"	style="width:100px;"
-								name="name" />
-						</td>
-					</tr>
-					
 					<tr>
 						<th class="text-center" 
 							style="vertical-align:middle;">패스워드</th>
@@ -80,40 +61,16 @@
 								name="pass" />
 						</td>
 					</tr>
-					
-					<tr>
-						<th class="text-center"
-							style="vertical-align:middle;">제목</th>
-						<td>
-							<input type="text" class="form-control" name="title"/>
-						</td>
-					</tr>
-					
-					<tr>
-						<th class="text-center" 
-							style="vertical-align:middle;">내용</th>
-						<td>
-							<textarea rows="10" name="content"
-								class="form-control"></textarea>
-						</td>
-					</tr>
-					
-					<tr>
-						<th class="text-center"
-							style="vertical-align:middle;">첨부파일</th>
-						<td>
-							<input type="file" class="form-control" name="attachedfile"/>
-						</td>
-					</tr>
 				</tbody>
 				</table>
 			</div>
 			
 			<div class="row mb-3">
-				<div class="col text-right">					
+				<div class="col text-right">
+					<!-- 각종 버튼 부분 -->
 					<button type="submit" class="btn btn-danger">전송하기</button>
 					<button type="reset" class="btn btn-dark">Reset</button>
-					<button type="button" class="btn btn-warning" onclick="location.href='../DataRoom/DataList';">리스트보기</button>
+					<button type="button" class="btn btn-warning" onclick="location.href='../DataRoom/DataList?nowPage=${param.nowPage}&searchColumn=${param.searchColumn }&searchWord=${param.searchWord }';">리스트보기</button>
 				</div>
 				</form>				
 			</div>

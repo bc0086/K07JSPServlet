@@ -58,6 +58,8 @@
 			<tr>
 					<th class="text-center table-active align-middle">첨부파일</th>
 					<td colspan="3">
+					
+						<!-- 첨부파일이 있는 경우에만 디스플레이함 -->
 						<c:if test="${not empty dto.attachedfile }">
 						${dto.attachedfile }
 							<a href="./Download?filename=${dto.attachedfile }&idx=${dto.idx}">
@@ -77,14 +79,14 @@
 					
 				<!-- 회원제게시판에서 삭제처리는 별도의 폼이 필요없이, 사용자에 대한 인증처리만 되면 즉시 삭제처리한다. -->
 				<button type="button" class="btn btn-secondary"
-					onclick="location.href='./DataPassword?idx=${param.idx }&mode=edit&nowPage=${param.nowPage }';">수정하기</button>
+					onclick="location.href='./DataPassword?idx=${param.idx }&mode=edit&nowPage=${param.nowPage }&searchColumn=${param.searchColumn }&searchWord=${param.searchWord }';">수정하기</button>
 				<button type="button" class="btn btn-success"
-					onclick="location.href='./DataRoom/DataPassword?idx=${dto.idx }&mode=deltet&nowPage=${param.nowPage }';">삭제하기</button>
+					onclick="location.href='../DataRoom/DataPassword?idx=${dto.idx }&mode=delete&nowPage=${param.nowPage }&searchColumn=${param.searchColumn }&searchWord=${param.searchWord }';">삭제하기</button>
 			
 			</div>
 			
 			<div class="col-6 text-right pr-5">
-				<button type="button" class="btn btn-warning" onclick="location.href='BoardList.jsp';">리스트보기</button>
+				<button type="button" class="btn btn-warning" onclick="location.href='./DataList?nowPage=${param.nowPage}&searchColumn=${param.searchColumn }&searchWord=${param.searchWord }';">리스트보기</button>
 			</div>
 	
 	<!-- 
