@@ -18,7 +18,8 @@
 		<li>전체URL : <%=request.getRequestURL() %></li>
 		<li>도메인을 제외한 URL : <%=request.getRequestURI() %></li>
 		<li>프로토콜 : <%=request.getProtocol() %></li>
-		<li>서버명 : <%=request.getServerPort() %></li>
+		<li>서버명 : <%=request.getServerName() %></li>
+		<li>서버포트 : <%=request.getServerPort() %></li>
 		
 		<!--
 		로컬 웹서버의 주소는 localhost 혹은 127.0.0.1과 같은 루프백을 사용하나

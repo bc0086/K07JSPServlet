@@ -32,7 +32,7 @@
 		out.println("<script>");
 		out.println("	alert('이름을 입력하세요.');");
 		//out.println("	history.back();");
-		//out.println("<script>");
+		//out.println("</script>");
 		String jsStr = "history.back();"
 					+ "</script>";
 		out.println(jsStr);

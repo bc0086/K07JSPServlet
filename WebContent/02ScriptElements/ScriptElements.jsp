@@ -49,7 +49,7 @@ public void showPrint(String str, JspWriter out){
 	<%--
 	스크립트렛(Scriptlet) : 주로 JSP코드를 작성하고 실핼항 때 사용하는 영역.
 		스크립트렛은 head영역, body영역 어디서든 사용할 수 있다.
-		사용법  <% JSP코드
+		사용법  <% JSP코드;
 	 --%>
 	
 	<%

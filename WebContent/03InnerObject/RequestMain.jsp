@@ -12,14 +12,14 @@
 	<h2>전송방식(Post, Get) 테스트</h2>
 	
 	<!--
-	Get방식에는 3가지 전송방식이 있다.
-	1. <a href=""를 사용하는 방법
-	2. JS의 location.href=""를 사용하는 방법
-	3. <form method="get"을 사용하는 방법
+		Get방식에는 3가지 전송방식이 있다.
+		※ href : 링크하기 위해 연결할 주소를 지정하는 역할
+		- 1. <a href=""를 사용하는 방법
+		- 2. JS의 location.href=""를 사용하는 방법
+		- 3. <form method="get"을 사용하는 방법
 	-->
 	<h3>Get방식 전송</h3>
-	<a href="RequestInfo.jsp?paramNum=123&paramEng=Hello&paramHan=안녕">
-		Get방식</a>
+	<a href="RequestInfo.jsp?paramNum=123&paramEng=Hello&paramHan=안녕">Get방식</a>
 		
 	<h3>Post방식 전송</h3>
 	<form action="RequestInfo.jsp" method="post">
@@ -28,9 +28,7 @@
 	</form>
 	
 	<h2>파라미터 및 값 전달</h2>
-	<%
-	String encodeName = URLEncoder.encode("홍길동", "UTF-8");
-	%>
+	<% String encodeName = URLEncoder.encode("홍길동", "UTF-8"); %>
 	<a href="RequestParameter.jsp?name=<%=encodeName%>
 		&id=hong&sex=man&favorite=&self_intro=">Get방식</a>
 	<br />
@@ -85,12 +83,12 @@
 		<ol>
 			<li>RequestHeader자체실행 : referer항목 보이지 않음.</li>
 			<li>Main을 실행 후 링크를 통해 접속 : referer항목 보임.</li>
-			<!-- refer : 현재 접속한 페이지의 이전URL의 정보를 담고 있다.
-						이 정보를 통해 어떤 사이트에서 유입되었는지를 알 수 있다.
+			<!-- 
+				refer : 
+				- 현재 접속한 페이지의 이전URL의 정보를 담고 있다.
+				- 이 정보를 통해 어떤 사이트에서 유입되었는지를 알 수 있다.
 			 -->
 		</ol>	
-	
-	
 	</div>
 				
 </body>

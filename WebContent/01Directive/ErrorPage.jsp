@@ -16,7 +16,7 @@
 	<h2> 에러발생됨 : 관리자에게 문의하세요</h2>
 	<h3>연락처 : 010-1234-5678</h3>
 	<h3>서버 업그레이드 중입니다.</h3>
-	<img src="https://lh3.googleusercontent.com/proxy/DSqyuhX1SSDZVsNblvN6H-HhIUCxsmHFYhIaqHoPNC98IhCaq4sFtgSFJ2YbiXGH0i8j4zPvYcwvFNpxWzWX9v35g95CDoDgXymseqxb6OsX3mbbr1TWVNL2fAJRCXjHY7iTfTulY9_Oq2M8xVxmoWw" alt="" />
+	<img src="https://m.onrgoods.com/web/product/big/201609/1991_shop1_502973.jpg" />
 	<h3>
 		에러내용 : <%=exception.getMessage() %>
 	</h3>
