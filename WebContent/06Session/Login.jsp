@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<!-- 공통링크  -->
 <%@ include file="../common/CommonLink.jsp" %>
 
 <h2>로그인 페이지</h2>

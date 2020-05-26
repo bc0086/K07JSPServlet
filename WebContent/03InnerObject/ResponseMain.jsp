@@ -34,7 +34,7 @@
 	
 	
 	<h2>sendRedirect테스트(JDBC문 사용하기)</h2>
-	<form action="./ResponseJDBC.jsp" method="post">
+	<form action="./02_3ResponseJDBC.jsp" method="post">
 	<table border="1" width='300'>
 		<tr>
 			<td>아이디</td>

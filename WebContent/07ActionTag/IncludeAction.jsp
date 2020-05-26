@@ -9,8 +9,8 @@
 <body>
 
 	<%
-	String directivePath = "./include/DirectivePage,jsp";
-	String actionTagPath = "./include/ActionTagPage,jsp";
+	String directivePath = "./include/DirectivePage.jsp";
+	String actionTagPath = "./include/ActionTagPage.jsp";
 	
 	// 페이지영역, 리퀘스트영역에 속성 저장
 	pageContext.setAttribute("pageVar", "페이지영역에 저장");
@@ -27,6 +27,9 @@
 	<%--@ include file="<%=directivePath %>" --%>
 	<%@ include file="./include/DirectivePage.jsp" %>
 	
+	<!-- 
+		액션태그의 경우에는 표현식, String 두가지 모두 사용할 수 있다.
+	 -->
 	<h3>include 액션태그로 페이지 포함하기</h3>
 	<jsp:include page="<%=actionTagPath %>" />
 	<jsp:include page="./include/ActionTagPage.jsp" />
@@ -49,6 +52,6 @@
 	변수출력 : <%=dirString %>
 	
 	<h3>액션태그 페이지에서 선언한 변수 사용</h3>
-	변수출력 : <%=actionString %>
+	변수출력 : <%--=actionString --%>
 </body>
 </html>

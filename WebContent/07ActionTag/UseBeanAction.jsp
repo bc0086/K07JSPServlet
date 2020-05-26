@@ -27,9 +27,10 @@
 			request.setAttribute("member", memberDTO);
 		}
 		// 액션태그를 사용하면 JSP코드보다 간결하게 표현할 수 있다.	
+	--%>
 	
 	<%-- 
-	<jsp:useBean 액션태그의 id 속성과 <jsp:setProperty의 name속성값이 서로 연결된다.
+	<jsp:useBean id 속성과 <jsp:setProperty의 name속성값이 서로 연결된다.
 	빈의 setter()메소드를 통해 값을 설정한다.
 	 --%>
 	<h3>setProperty 액션태그로 자바빈 객체 속성 지정하기</h3>

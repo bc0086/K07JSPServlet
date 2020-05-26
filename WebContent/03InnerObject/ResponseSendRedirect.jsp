@@ -8,7 +8,7 @@
 </head>
 <body>
 <%
-//폼값 박기
+//폼값 받기
 String id = request.getParameter("user_id");
 String pwd = request.getParameter("user_pwd");
 
@@ -26,7 +26,7 @@ else{
 
 <%
 	/*
-	JS코드와 JSP코드가 동일한 블럭내에 존재하는 경우 JSP코드가 우선순위가 높으르모
+	JS코드와 JSP코드가 동일한 블럭내에 존재하는 경우 JSP코드가 우선순위가 높으므로
 	JS코드는 무시괸다. 즉 이와 같은 경우 JS코드는 실행되지 않고, 아래JSP코드가 실행되게 된다.
 	*/
 	//response.sendRedirect("./ResponseMain.jsp");
