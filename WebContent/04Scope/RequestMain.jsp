@@ -29,6 +29,7 @@ request.setAttribute("requestMember1", new MemberDTO("Hong", "1234",
 		</li>
 		
 		<%
+		// 우리가 정의한 객체인경우 형변환후 사용가능
 		MemberDTO member =
 			(MemberDTO)request.getAttribute("requestMember1");
 		%>
@@ -86,8 +87,8 @@ request.setAttribute("requestMember1", new MemberDTO("Hong", "1234",
 	 --%>
 	<h3>sendRedirect()를 사용한 페이지 이동</h3>
 	<%
-	//response.sendRedirect("RequestResult.jsp?param=" +
-				//URLEncoder.encode("리다이렉트방식","UTF-8"));
+	response.sendRedirect("RequestResult.jsp?param=" +
+				URLEncoder.encode("리다이렉트방식","UTF-8"));
 	%>
 	
 </body>

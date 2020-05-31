@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<title>InnerObject.jsp</title>
-
 <%
+// 각 4개의 영역에 같은 속성명으로 데이터 저장
 pageContext.setAttribute("scopeVar", "페이지영역");
 request.setAttribute("scopeVar", "리퀘스트영역");
 session.setAttribute("scopeVar", "세션영역");
@@ -12,6 +11,9 @@ application.setAttribute("scopeVar", "어플리케이션영역");
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>InnerObject.jsp</title>
+</head>
 <body>
 	<!-- 
 		EL에서 각 영역에 저장된 속성을 읽을때는 xxxScope계열의 내장객체를 사용한다.
@@ -35,7 +37,6 @@ application.setAttribute("scopeVar", "어플리케이션영역");
 			page영역이 읽혀지게 된다.</li>
 	</ul>
 	
-	<jsp:forward page="01InnerForward.jsp">
+	<jsp:forward page="InnerForward.jsp" />
 </body>
-</head>
 </html>

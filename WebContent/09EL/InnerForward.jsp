@@ -17,22 +17,22 @@
 	<h3>자바코드를 통해서 속성읽기</h3>
 	<ul>
 		<li>
-			pageContext.getAttribute("ScopeVar") :
+			pageContext.getAttribute("scopeVar") :
 				<%=pageContext.getAttribute("scopeVar") %>
 		</li>
 	
 		<li>
-			request.getAttribute("ScopeVar") :
+			request.getAttribute("scopeVar") :
 				<%=request.getAttribute("scopeVar") %>
 		</li>
 		
 		<li>
-			session.getAttribute("ScopeVar") :
+			session.getAttribute("scopeVar") :
 				<%=session.getAttribute("scopeVar") %>
 		</li>
 	
 		<li>
-			application.getAttribute("ScopeVar") :
+			application.getAttribute("scopeVar") :
 				<%=application.getAttribute("scopeVar") %>
 		</li>
 	</ul>
@@ -41,8 +41,8 @@
 	<ul>
 		<li>페이지영역 : ${pageScope.scopeVar }</li>
 		<li>리퀘스트영역 : ${requestScope.scopeVar }</li>
-		<li>페이지영역 : ${sessionScope.scopeVar }</li>
-		<li>페이지영역 : ${applicationScope.scopeVar }</li>
+		<li>세션영역 : ${sessionScope.scopeVar }</li>
+		<li>어플리케이션영역 : ${applicationScope.scopeVar }</li>
 	</ul>
 	
 	<h3>xxxScope 미지정 후 속성 읽기</h3>

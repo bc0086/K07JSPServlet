@@ -31,7 +31,7 @@ if("kosmo".equals(userid) && "1234".equals(userpw)){
 	else{		
 		// 체크했을때...
 		// 사용자가 입력한 아이디로 쿠키를 생성한다.
-		Cookie ck = new Cookie("USED_ID", userid);
+		Cookie ck = new Cookie("USER_ID", userid);
 		System.out.println(request.getContextPath());
 		ck.setPath(request.getContextPath());
 		ck.setMaxAge(60*60*24*100);

@@ -27,8 +27,8 @@
 						m1 != null ? m1.getRegidate():"");
 	%>
 	<ul>
-		<li>Date객체 : <%=date %></li>
-		<li>MemberDTO객체 : <%= %></li>
+		<li>Date객체 : <%=dateString %></li>
+		<li>MemberDTO객체 : <%=m1Str %></li>
 	</ul>
 	
 </body>

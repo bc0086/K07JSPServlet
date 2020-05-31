@@ -165,7 +165,7 @@
 		<li>\${empty elnullStr } : ${empty elnullStr }</li>
 		<li>\${not empty elemptyStr } : ${not empty elemptyStr }</li>
 		<li>\${empty ellengthZero ? "배열크기가 0임"  : "배열크기가 0이 아님"}</li>
-		<li>\${not empty elsizeZero ? "컬렉션에 저장된 객체 있음"  : "컬렉셔넹 저장된 객체 없음"}</li>
+		<li>\${not empty elsizeZero ? "컬렉션에 저장된 객체 있음"  : "컬렉션에 저장된 객체 없음"}</li>
 	</ul>
 </body>
 </html>

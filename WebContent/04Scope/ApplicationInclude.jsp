@@ -21,10 +21,10 @@
 				pageMember!=null ? pageMember.getPass():"",
 				pageMember!=null ? pageMember.getName():"",
 				pageMember!=null ? pageMember.getRegidate():"");
-		out.println(pMemberStr);				
+	out.println(pMemberStr);				
 	%>
 	
-	<h3>request여역에 저장된 객체</h3>
+	<h3>request영역에 저장된 객체</h3>
 	<%
 	MemberDTO requestMember = 
 		(MemberDTO)request.getAttribute("requestMember");
@@ -34,7 +34,7 @@
 				requestMember!=null ? requestMember.getPass():"",
 				requestMember!=null ? requestMember.getName():"",
 				requestMember!=null ? requestMember.getRegidate():"");
-	
+	out.println(rMemberStr);
 	%>
 </body>
 </html>

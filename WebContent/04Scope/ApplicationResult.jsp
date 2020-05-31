@@ -76,7 +76,7 @@
 	out.println(pMemberStr);				
 	%>
 	
-	<h3>request여역에 저장된 MemberDTO객체 읽어오기</h3>
+	<h3>request영역에 저장된 MemberDTO객체 읽어오기</h3>
 	
 	<h4>forward된 페이지까지 영역이 공유된다.</h4>
 	<%
@@ -90,9 +90,5 @@
 			requestMember!=null ? requestMember.getRegidate():"");
 	out.println(rMemberStr);				
 	%>
-	
-	
-	
-	
 </body>
 </html>
