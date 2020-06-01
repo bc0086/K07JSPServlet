@@ -39,7 +39,7 @@
 	Context ctx = (Context)initCtx.lookup("java:comp/env");
 	
 	/*
-		3. serve.xml에 등록한 네이밍을 lookup하여 DataSource를 얻어온다.
+		3. sever.xml에 등록한 네이밍을 lookup하여 DataSource를 얻어온다.
 	*/
 	DataSource source = (DataSource)ctx.lookup("jdbc/myoracle");
 	
