@@ -9,8 +9,7 @@
 인코딩을 설정해야한다.
 */
 request.setCharacterEncoding("UTF-8");
-request.setAttribute("member", new MemberDTO("Sung", "9999", 
-		"성춘향", null));
+request.setAttribute("member", new MemberDTO("Sung", "9999", "성춘향", null));
 %>
 <!DOCTYPE html>
 <html>
@@ -34,14 +33,15 @@ request.setAttribute("member", new MemberDTO("Sung", "9999",
 	String pageURL = "ParamActionForwardResult.jsp?query=반갑습니다";
 	String paramValue = "KOSMO";
 	
-	request.setAttribute("member", new MemberDTO("Lee", "7777", 
-			"이몽룡", null));
+	request.setAttribute("member", new MemberDTO("Lee", "7777", "이몽룡", null));
 	%>
 	
-	<jsp:forward page="<%=pageURL %>">
-		<jsp:param value="한국소프트웨어인재개발원" name="name"/>
-		<jsp:param value="<%=paramValue %>" name="id" />
-	</jsp:forward>
+	<%--
+		<jsp:forward page="<%=pageURL %>">
+			<jsp:param value="한국소프트웨어인재개발원" name="name"/>
+			<jsp:param value="<%=paramValue %>" name="id" />
+		</jsp:forward>
+	--%>
 	
 </body>
 </html>

@@ -69,7 +69,10 @@ public class MemberDTO {
 				id, pass, name);
 	}
 	
-	// getter/setter
+//	public static void main(String[] args) {
+//		MemberDTO dto = new MemberDTO("kosmo","1234","코스모",null);
+//			System.out.println(dto);
+//	}
 	
 	
 }

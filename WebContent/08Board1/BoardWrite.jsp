@@ -17,7 +17,8 @@
 			
 			<script>
 				// 유기명 함수
-				function checkValidate(frm) { // frm이라는 변수는 form태그의 dom객체이다.
+				function checkValidate(frm) { 
+					// frm이라는 변수는 form태그의 dom객체이다.
 					
 					if(frm.title.value == "") {
 							alert("제목이 없습니다."); // 경고창 띄움

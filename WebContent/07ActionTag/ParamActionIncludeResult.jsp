@@ -10,7 +10,7 @@
 
 	<h2>인클루드 된 페이지</h2>
 	
-	<h3>param액션캐그로 전달된 값 출력하기</h3>
+	<h3>param액션태그로 전달된 값 출력하기</h3>
 	<ul>
 		<li>queryString : <%=request.getParameter("query") %></li>
 		<li>name : <%=request.getParameter("name") %></li>

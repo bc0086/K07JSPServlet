@@ -85,13 +85,12 @@
 	<c:forEach begin="1" end="5" var="x">
 		<c:forEach begin="1" end="5" var="y">
 			<c:choose>
-				<c:when test="${x==y} ">
+				<c:when test="${x==y }">
 					1&nbsp;
 				</c:when>
 				<c:otherwise>
 					0&nbsp;
 				</c:otherwise>
-				
 			</c:choose>
 		</c:forEach>
 		<br />
@@ -104,30 +103,27 @@
 			table태그를 사용해야 하고, 짝수행에 마우스 오버시 빨간색으로
 			홀수행에 마우스 오버시 노란색으로 바뀌게 코드를 작성하시오.
 		 -->
-<h3>JSTL로 출력하기</h3>
-<table border="1">
-	<c:forEach begin="2" end="9" var="dan" varStatus="gugudan">
-	<c:choose>
-		<c:when test="${gugudan.count mod 2 eq 0 }">
-			<c:set var="color" value="red" />
-		</c:when>
+	<h3>JSTL로 출력하기</h3>
+	<table border="1">
+		<c:forEach begin="2" end="9" var="dan" varStatus="gugudan">
+		<c:choose>
+			<c:when test="${gugudan.count mod 2 eq 0 }">
+				<c:set var="color" value="red" />
+			</c:when>
+			
+			<c:otherwise>
+				<c:set var="color" value="yellow" />
+			</c:otherwise>
+		</c:choose>
 		
-		<c:otherwise>
-			<c:set var="color" value="yellow" />
-		</c:otherwise>
-	</c:choose>
-	
-	<tr onmouseover="this.style.backgroundColor='${color}';"
-		onmouseout="this.style.backgroundColor='white';">
-	
-		<c:forEach begin="1" end="9" var="su">
-		<td>${dan }*${su }=${dan*su }</td>
-		</c:forEach>
-	</tr>	
-	</c:forEach>	
-
-
-</table>
+		<tr onmouseover="this.style.backgroundColor='${color}';"
+			onmouseout="this.style.backgroundColor='white';">
+			<c:forEach begin="1" end="9" var="su">
+			<td>${dan }*${su }=${dan*su }</td>
+			</c:forEach>
+		</tr>	
+		</c:forEach>	
+	</table>
 	
 </body>
 </html>

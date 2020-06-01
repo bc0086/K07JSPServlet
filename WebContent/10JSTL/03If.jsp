@@ -107,7 +107,7 @@
 		전송된 패스워드: ${param.pass }
 		<br />
 		<!-- 
-			첫번째 of문에서의 결과에 따라 두번째 if문은 반대와 결과를 가지게 되는 구조로 작성되었다.
+			첫번째 if문에서의 결과에 따라 두번째 if문은 반대와 결과를 가지게 되는 구조로 작성되었다.
 			즉 loginResult가 true값으로 설정된다면 두번쨰 if문에서는 false의 값으로 바뀌게 된다.
 		 -->
 		<c:if test="{param.user eq 'kosmo' and param.pass=='1234'}">

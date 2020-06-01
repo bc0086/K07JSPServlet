@@ -29,7 +29,7 @@
 	<ul>
 		<li>페이지 : ${pageVar }</li>
 		<li>리퀘스트1 : ${requestScope.pageVar }</li>
-		<li>리퀘스트2 : ${pageVar }</li>
+		<li>리퀘스트2 : ${requestVar }</li>
 		<li>세션 : ${sessionVar }</li>
 		<li>어플리케이션 : ${appVar }</li>
 	</ul>
@@ -39,13 +39,13 @@
 		영역 혹은 변수명이 설정이 잘못되더라도 에러는 발생하지 않는다.
 	 -->
 	<h3>remove로 삭제하기</h3>
-	<c:remove var="pageVar" />
+	<c:remove var="requestVar" scope="session" />
 	
 	<h3>영역이 다른 속성명 삭제후 출력하기</h3>
 	<ul>
 		<li>페이지 : ${pageVar }</li>
 		<li>리퀘스트1 : ${requestScope.pageVar }</li>
-		<li>리퀘스트2 : ${pageVar }</li>
+		<li>리퀘스트2 : ${requestVar }</li>
 		<li>세션 : ${sessionVar }</li>
 		<li>어플리케이션 : ${appVar }</li>
 	</ul>
@@ -61,7 +61,7 @@
 	<ul>
 		<li>페이지 : ${pageVar }</li><!-- 삭제됨 -->
 		<li>리퀘스트1 : ${requestScope.pageVar }</li><!-- 삭제됨 -->
-		<li>리퀘스트2 : ${pageVar }</li>
+		<li>리퀘스트2 : ${requestVar }</li>
 		<li>세션 : ${sessionVar }</li>
 		<li>어플리케이션 : ${appVar }</li>
 	</ul>

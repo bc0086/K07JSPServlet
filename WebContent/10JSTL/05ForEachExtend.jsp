@@ -15,7 +15,7 @@
 <body>
 	<!-- 
 		forEach태그의 두번째 문법 : 확장 for문
-			: 주로 배열이나 컬렉션에스 값을 순차적으로 접근하고 싶을때 사용한다.
+			: 주로 배열이나 컬렉션에서 값을 순차적으로 접근하고 싶을때 사용한다.
 				varStatus에 지정된 값들 중 index속성은 0부터 시작한다.
 				필수속성으로는 items와 var가 있다.
 				
@@ -69,13 +69,12 @@
 	
 	<h3>일반 for문 형태의 JSTL의 forEach태그</h3>
 	<ul>
-		<c:forEach begin="0" end="${lists.size()-1 }"
-			var="i">
+		<c:forEach begin="0" end="${lists.size()-1 }" var="i">
 			<li>
 				<!-- index를 사용하므로 배열자체에 []를 붙여준다. -->
 				아이디:${lists[i].id },
-				패스워드:%{lists[i].pass },
-				이름:%{lists[i].name }
+				패스워드:${lists[i].pass },
+				이름:${lists[i].name }
 			</li>
 		</c:forEach>
 	</ul>
@@ -86,8 +85,8 @@
 		<li>
 			<!-- 확장형에서는 참조변수를 바로 사용한다. -->
 			아이디:${list.id },
-			패스워드:%{list.pass },
-			이름:%{list.name}
+			패스워드:${list.pass },
+			이름:${list.name}
 		</li>
 		</c:forEach>
 	</ul>
