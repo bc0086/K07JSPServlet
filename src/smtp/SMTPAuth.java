@@ -19,7 +19,7 @@ public class SMTPAuth extends Authenticator {
 	
 	@Override
 	protected PasswordAuthentication getPasswordAuthentication() {
-		return new PasswordAuthentication("bc0086", "chan0702!!");
+		return new PasswordAuthentication("아이디", "비밀번호");
 	}
 	
 	public boolean emailSending(Map<String, String> map) {

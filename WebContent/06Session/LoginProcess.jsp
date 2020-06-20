@@ -7,7 +7,7 @@
 <!-- 제목 : LoginProcess.jsp -->
 
 <%
-String id = request.getParameter("user_id");
+	String id = request.getParameter("user_id");
 String pw = request.getParameter("user_pw");
 
 String drv = application.getInitParameter("JDBCDriver");
@@ -17,7 +17,7 @@ MemberDAO dao = new MemberDAO(drv, url);
 
 /*
 // 방법1 : count(*) 함수를 통해 회원의 존재유무만 판단한다.
-			따라서 회원의 아이디, 패스워드 이외의 정보는 DB에서 가져올 수 없다.
+	따라서 회원의 아이디, 패스워드 이외의 정보는 DB에서 가져올 수 없다.
 boolean isMember = dao.isMember(id, pw);
 if(isMember == true){
 	session.setAttribute("USER_ID", id);
